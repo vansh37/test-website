@@ -1,0 +1,22 @@
+{
+  "name": "test-website",
+  "version": "1.0.0",
+  "description": "simple test website to learn web development",
+  "main": "index.js",
+  "scripts": {
+    "start": "node config.js",
+    "test": "mocha test"
+  },
+  "author": "Vanshaj Girotra",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "mocha": "^6.1.4"
+  }
+}
