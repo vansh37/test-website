@@ -1,7 +1,11 @@
-import './app/index.js';
-const express = require("express");
+// import './app/index.js';
+
+import express, { urlencoded } from "express";
 const app = express();
-const port = 3000;
+ app.use(urlencoded({extended: true})); ///  forms are url encoded .. to study this. DEPRECATED??  body-parser deprecated undefined extended: provide extended option 
+// https://stackoverflow.com/questions/25471856/express-throws-error-as-body-parser-deprecated-undefined-extended
+
+ const port = 3000;
 app.get('/' , (request ,response)=>{
     response.sendFile('/Users/vansh/Desktop/test-website/views/index.html' , (err)=>{
         if (err)
@@ -13,6 +17,13 @@ app.post('/' , (request , response)=>{
     //console.log(request);
     console.log(request.query.name);
     response.send("in post root");
+});
+
+app.post('/second' , (request ,response)=>{
+    //response.sendFile('/Users')
+    console.log("post second");
+    console.log(request);
+    response.send("in post second");
 });
 
 app.listen(port , (err) =>{
